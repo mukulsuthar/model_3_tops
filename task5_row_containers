@@ -1,0 +1,59 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: RowContainers(),
+    );
+  }
+}
+
+class RowContainers extends StatelessWidget {
+  const RowContainers({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Row with Containers"),
+        backgroundColor: Colors.teal,
+      ),
+      body: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              height: 100,
+              color: Colors.red,
+              child: const Center(child: Text("One")),
+            ),
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              height: 100,
+              color: Colors.green,
+              child: const Center(child: Text("Two")),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              height: 100,
+              color: Colors.blue,
+              child: const Center(child: Text("Three")),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
